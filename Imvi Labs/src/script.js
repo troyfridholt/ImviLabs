@@ -12,13 +12,13 @@ document.addEventListener('DOMContentLoaded', () => {
 
   form.addEventListener('submit', (event) => {
     event.preventDefault();
-
     const difficulty = document.querySelector('#difficulty').value;
 
     // Hämta text från databas med vald svårighetsgrad
     text = 'Text hämtas från databas här';
 
     testBox.innerHTML = text;
+    stopButton.style.display = 'block';
     testBox.appendChild(stopButton);
 
     startTime = Date.now();
@@ -36,6 +36,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
     wpmSpan.textContent = wpm;
     accuracySpan.textContent = {accuracy};
+    
   });
 });
 

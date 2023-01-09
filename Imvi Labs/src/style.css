@@ -137,6 +137,7 @@ body {
   
   #stop-button {
     align-self: center;
+    display: none;
   }
 
   
