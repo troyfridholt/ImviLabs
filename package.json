@@ -1,0 +1,21 @@
+{
+  "name": "imvilabs",
+  "version": "1.0.0",
+  "description": "",
+  "scripts": {
+    "dev":"parcel ./src/index.html",
+    "build": "parcel build ./src/index.html --public-url ./",
+    "clean": "del-cli ./dist ./.parcel-cache"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/NoahNemhed/ImviLabs.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/NoahNemhed/ImviLabs/issues"
+  },
+  "homepage": "https://github.com/NoahNemhed/ImviLabs#readme"
+}
