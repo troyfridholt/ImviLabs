@@ -7,7 +7,7 @@
 </head>
 <body>
   <header>
-    <h1>Läsningstest</h1>
+    <h1>Lästest</h1>
   </header>
   <form>
     <label for="difficulty">Välj svårighetsgrad:</label>
@@ -21,14 +21,14 @@
     <button type="submit">Starta test</button>
   </form>
   <div id="test-box">
-    <p>Text hämtas från databas här</p>
+    <p id="textToRead"></p>
     <div class="test-controls">
       <button id="stop-button">Stopp</button>
       
     </div>
   </div>
 
-  <div id="test-results" style="display:none">
+  <div id="test-results" style="display:block">
     <p>Ord per minut: <span id="wpm">0</span></p>
     <p>Noggrannhet på frågor: <span id="question-accuracy">0%</span></p>
     <p>Total noggrannhet: <span id="total-accuracy">0%</span></p>
@@ -39,6 +39,4 @@
   </footer>
   <script src="script.js"></script>
 </body>
-
-
 </html>
