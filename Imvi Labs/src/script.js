@@ -26,6 +26,21 @@ document.addEventListener('DOMContentLoaded', () => {
   });
 
   stopButton.addEventListener('click', () => {
+    testBox.innerHTML = '<div id="question-form">' +
+                     '<form>' +
+                     '<label for="question1">Fråga 1:</label><br>' +
+                     '<input type="text" id="question1"><br>' +
+                     '<br>' +
+                     '<label for="question2">Fråga 2:</label><br>' +
+                     '<input type="text" id="question2"><br>' +
+                     '<br>' +
+                     '<input type="submit" value="Skicka">' +
+                     '</form>' +
+                     '</div>';
+
+    const questionForm = document.querySelector('#question-form');
+questionForm.style.display = 'block';
+
     endTime = Date.now();
     clearInterval(interval);
 
