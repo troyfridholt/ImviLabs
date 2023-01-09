@@ -26,58 +26,49 @@ document.addEventListener('DOMContentLoaded', () => {
   });
 
   stopButton.addEventListener('click', () => {
-    testBox.innerHTML = '<div id="question-form">' +
-                     '<form>' +
-                     '<label for="question1">Fråga 1:</label><br>' +
-                     '<input type="radio" name="question1-A" value="option1"><br>' +
-                     '<label for="question1-A">A</label> <br>'+
-                     '<input type="radio" name="question1-B" value="option2"><br>' +
-                     '<label for="question1-B">B</label> <br>'+
-                     '<input type="radio" name="question1-C" value="option3"><br>' +
-                     '<label for="question1-C">C</label> <br>'+
-                     '<br>' +
-                     '<label for="question2">Fråga 2:</label><br>' +
-                     '<input type="radio" name="question2-A" value="option1"><br>' +
-                     '<label for="question2-A">A</label> <br>'+
-                     '<input type="radio" name="question2-B" value="option2"><br>' +
-                     '<label for="question2-B">B</label> <br>'+
-                     '<input type="radio" name="question2-C" value="option3"><br>' +
-                     '<label for="question3-C">C</label> <br>'+
-                     '<br>' +
-                     '<br>' +
-                     '<label for="question3">Fråga 3:</label><br>' +
-                     '<input type="radio" name="question3-A" value="option1"><br>' +
-                     '<label for="question3-A">A</label> <br>'+
-                     '<input type="radio" name="question3-B" value="option2"><br>' +
-                     '<label for="question3-B">B</label> <br>'+
-                     '<input type="radio" name="question3-C" value="option3"><br>' +
-                     '<label for="question3-C">C</label> <br>'+
-                     '<br>' +
-                     '<br>' +
-                     '<label for="question2">Fråga 4:</label><br>' +
-                     '<input type="radio" name="question4-A" value="option1"><br>' +
-                     '<label for="question4-A">A</label> <br>'+
-                     '<input type="radio" name="question4-B" value="option2"><br>' +
-                     '<label for="question4-B">B</label> <br>'+
-                     '<input type="radio" name="question4-C" value="option3"><br>' +
-                     '<label for="question4-C">C</label> <br>'+
-                     '<br>' +
-                     '<br>' +
-                     '<label for="question2">Fråga 5:</label><br>' +
-                     '<input type="radio" name="question5-A" value="option1"><br>' +
-                     '<label for="question5-A">A</label> <br>'+
-                     '<input type="radio" name="question5-B" value="option2"><br>' +
-                     '<label for="question5-B">B</label> <br>'+
-                     '<input type="radio" name="question5-C" value="option3"><br>' +
-                     '<label for="question5-C">C</label> <br>'+
-                     '<br>' +
-                     '<input type="submit" value="Skicka">' +
-                     '</form>' +
-                     '</div>';
-
-const questionForm = document.querySelector('#question-form');
-questionForm.style.display = 'block';
-
+    const questions = [
+      {
+        text: 'Fråga 1:',
+        options: ['A', 'B', 'C']
+      },
+      {
+        text: 'Fråga 2:',
+        options: ['A', 'B', 'C']
+      },
+      {
+        text: 'Fråga 3:',
+        options: ['A', 'B', 'C']
+      },
+      {
+        text: 'Fråga 4:',
+        options: ['A', 'B', 'C']
+      },
+      {
+        text: 'Fråga 5:',
+        options: ['A', 'B', 'C']
+      }
+      
+    ];
+    
+    // Clear the "test-box" element
+    testBox.innerHTML = '';
+  
+    // Iterate through the questions array and append each question to the "test-box" element
+    let html = '';
+    questions.forEach((question) => {
+      html += `<label for="${question.text}">${question.text}</label>
+               <br>`;
+  
+      question.options.forEach((option) => {
+        html += `<input type="radio" name="${question.text}-${option}" value="option1">
+                 <label for="${question.text}-${option}">${option}</label>
+                 <br>`;
+      });
+  
+      html += '<br>';
+    });
+    testBox.innerHTML = html;
+  
     endTime = Date.now();
     clearInterval(interval);
 
@@ -88,9 +79,8 @@ questionForm.style.display = 'block';
 
     wpmSpan.textContent = wpm;
     accuracySpan.textContent = {accuracy};
-    
   });
-});
+  });
 
 function updateTimer() {
   // Uppdatera tidtagare här

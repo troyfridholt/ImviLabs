@@ -1,0 +1,152 @@
+body {
+  background-color: #f1f1f1;
+  font-family: Arial, sans-serif;
+}
+
+header {
+  color: #fff;
+  text-align: center;
+  background-color: #333;
+  padding: 20px;
+}
+
+h1 {
+  margin: 0;
+}
+
+form {
+  justify-content: center;
+  align-items: center;
+  margin: 20px 0;
+  display: flex;
+}
+
+label {
+  margin-right: 10px;
+}
+
+select {
+  width: 150px;
+  height: 40px;
+  border: 1px solid #333;
+  border-radius: 5px;
+  padding: 0 10px;
+  font-size: 14px;
+}
+
+button {
+  color: #fff;
+  cursor: pointer;
+  background-color: #333;
+  border: none;
+  padding: 10px 20px;
+  font-size: 14px;
+}
+
+#test-results {
+  justify-content: center;
+  align-items: center;
+  margin-top: 20px;
+  display: flex;
+}
+
+#test-results p {
+  margin: 0;
+  font-size: 14px;
+}
+
+#test-results span {
+  font-size: 18px;
+  font-weight: bold;
+}
+
+footer {
+  color: #fff;
+  text-align: center;
+  background-color: #333;
+  padding: 20px;
+}
+
+nav {
+  color: #fff;
+  background-color: #333;
+  justify-content: space-between;
+  align-items: center;
+  padding: 20px;
+  display: flex;
+}
+
+nav ul {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+  display: flex;
+}
+
+nav li {
+  margin-right: 20px;
+}
+
+#test-box {
+  width: 800px;
+  height: 400px;
+  background-color: #fff;
+  border: 1px solid #333;
+  border-radius: 5px;
+  justify-content: center;
+  align-items: center;
+  margin: 20px auto;
+  display: flex;
+}
+
+#test-box p {
+  text-align: center;
+  padding: 20px;
+  font-size: 18px;
+}
+
+#test-box .test-controls {
+  width: 100%;
+  justify-content: space-between;
+  align-items: center;
+  margin-top: 20px;
+  display: flex;
+}
+
+#test-box .test-controls button {
+  width: 100px;
+  height: 40px;
+  color: #fff;
+  cursor: pointer;
+  background-color: #333;
+  border: none;
+}
+
+#test-box .test-controls button:first-child {
+  margin-right: 20px;
+}
+
+#test-box {
+  flex-direction: column;
+  display: flex;
+}
+
+#test-box p {
+  margin-bottom: 20px;
+}
+
+#stop-button {
+  align-self: center;
+  display: none;
+}
+
+#test-box {
+  height: 400px;
+  overflow-y: scroll;
+}
+
+#test-box p {
+  font-size: auto;
+}
+
+/*# sourceMappingURL=index.2cdaf7bc.css.map */
