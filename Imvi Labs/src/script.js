@@ -46,7 +46,7 @@ questionForm.style.display = 'block';
 
     const elapsedTime = (endTime - startTime) / 1000;
     const words = text.split(' ');
-    const wpm = (words.length / elapsedTime) * 60;
+    const wpm = Math.round((words.length / elapsedTime) * 60);
     const accuracy = 100; // Räkna ut noggrannhet
 
     wpmSpan.textContent = wpm;
