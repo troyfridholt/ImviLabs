@@ -3,8 +3,9 @@
   "version": "1.0.0",
   "description": "",
   "scripts": {
-    "dev":"parcel Imvi Labs/src/index.html",
-    "build": "parcel build Imvi Labs/src/index.html --public-url ./"
+    "dev":"parcel ./src/index.html",
+    "build": "parcel build ./src/index.html --public-url ./",
+    "clean": "del-cli ./dist ./.parcel-cache"
   },
   "repository": {
     "type": "git",
