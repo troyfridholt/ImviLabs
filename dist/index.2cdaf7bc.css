@@ -24,10 +24,6 @@ form {
   display: flex;
 }
 
-label {
-  margin-right: 10px;
-}
-
 select {
   width: 150px;
   height: 40px;
@@ -92,6 +88,33 @@ footer {
   align-items: center;
   display: flex;
   overflow: auto;
+}
+
+#questionAlternatives {
+  display: flex;
+}
+
+#questionAlternatives label {
+  margin-right: 5%;
+  display: flex;
+}
+
+#questionAlternatives label input, #questionAlternatives label span {
+  margin-right: 5%;
+}
+
+#test-form {
+  flex-direction: column;
+  display: flex;
+}
+
+#answerQuestionsFormButton {
+  color: #fff;
+  cursor: pointer;
+  background-color: #333;
+  border: none;
+  padding: 10px 20px;
+  font-size: 14px;
 }
 
 /*# sourceMappingURL=index.2cdaf7bc.css.map */

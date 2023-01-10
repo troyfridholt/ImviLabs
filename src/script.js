@@ -74,22 +74,24 @@ document.addEventListener('DOMContentLoaded', () => {
     
     let html = '';
 let counter = 1;
+html = '<form id="test-form" onsubmit="return validateForm()">'
 questions.forEach((question, index) => {
-  html += `<div id="question_${counter}">${counter}. ${question.text}</div><br>`;
-  html += '<div>'
-  question.options.forEach((option, optionIndex) => {
-    html += `<label>
-             <span id="choice_${counter}${option.letter}_letter">${option.letter}. </span>
-             <input type="radio" id="${counter}.${option.letter}" name="q${counter}" value="${option.value}">
-             <div id="choice_${counter}${option.letter}">${option.text}</div>
-             </label>`;
+    html += `<div id="question_${counter}">${counter}. ${question.text}</div><br>`;
+    html += '<div id=questionAlternatives>'
+    question.options.forEach((option, optionIndex) => {
+      html += `<label>
+              <input type="radio" id="${counter}.${option.letter}" name="q${counter}" value="${option.value}">
+              <span id="choice_${counter}${option.letter}_letter">${option.letter}. </span>
+              <div id="choice_${counter}${option.letter}">${option.text}</div>
+              </label>`;
+    });
+    html += '</div>'
+    html += '<br>';
+    counter++;
   });
-  html += '</div>'
-  html += '<br>';
-  counter++;
-});
+      html += '<input type="submit" id="answerQuestionsFormButton" value="Skicka in svar"></form>'
 
-    testBox.innerHTML = html;
+      testBox.innerHTML = html;
   
     endTime = Date.now();
     clearInterval(interval);
@@ -97,12 +99,28 @@ questions.forEach((question, index) => {
     const elapsedTime = (endTime - startTime) / 1000;
     const words = text.split(' ');
     const wpm = Math.round((words.length / elapsedTime) * 60);
-    const accuracy = 100; // Räkna ut noggrannhet
 
-    wpmSpan.textContent = wpm;
-    accuracySpan.textContent = {accuracy};
+    accuracySpan.textContent = accuracy;
   });
   });
+
+  function validateForm(){
+    const questionAlternatives = document.querySelector('#questionAlternatives');
+
+    console.log(radioButtons.length)
+    for (let i = 0; i < radioButtons.length; i++) {
+      if (!radioButtons[i].checked) {
+        return false;
+      }
+    }
+    
+    return true;
+  }
+  
+  
+  
+  
+  
 
 function updateTimer() {
   // Uppdatera tidtagare här

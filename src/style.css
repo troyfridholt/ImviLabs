@@ -24,9 +24,6 @@ form {
   margin: 20px 0;
 }
 
-label {
-  margin-right: 10px;
-}
 
 select {
   width: 150px;
@@ -96,6 +93,35 @@ footer {
   overflow: auto;  
 }
 
+#questionAlternatives{
+  display: flex;
+}
+
+#questionAlternatives label{
+  display: flex;
+  margin-right: 5%;
+}
+
+#questionAlternatives label input{
+  margin-right: 5%;
+}
+#questionAlternatives label span{
+  margin-right: 5%;
+}
+
+#test-form{
+  display: flex;
+  flex-direction: column;
+}
+
+#answerQuestionsFormButton{
+  background-color: #333;
+  color: white;
+  border: none;
+  padding: 10px 20px;
+  cursor: pointer;
+  font-size: 14px;
+}
 
 
 
