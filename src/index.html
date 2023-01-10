@@ -1,14 +1,15 @@
 <!DOCTYPE html>
 <html>
-  <head>
-    <meta charset="utf-8" />
-    <title>Läsningstest</title>
-    <link rel="stylesheet" href="style.css" />
-  </head>
-  <body>
-    <header>
-      <h1>Lästest</h1>
-    </header>
+<head>
+  <meta charset="utf-8">
+  <title>Läsningstest</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <header>
+    <h1>Lästest</h1>
+  </header>
+  <div id="middle">
     <form>
       <label for="difficulty">Välj svårighetsgrad:</label>
       <select id="difficulty">
@@ -24,16 +25,20 @@
       <p id="textToRead"></p>
       <div class="test-controls">
         <button id="stop-button">Stopp</button>
+        
       </div>
     </div>
 
-    <div id="test-results" style="display: block">
+    <div id="test-results" style="display:block">
       <p>Ord per minut: <span id="wpm">0</span></p>
       <p>Noggrannhet på frågor: <span id="question-accuracy">0%</span></p>
       <p>Total noggrannhet: <span id="total-accuracy">0%</span></p>
     </div>
+  </div>
+  <footer>
+    
+  </footer>
 
-    <footer></footer>
-    <script src="script.js"></script>
-  </body>
+  <script src="script.js"></script>
+</body>
 </html>
