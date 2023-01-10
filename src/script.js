@@ -17,8 +17,7 @@ document.addEventListener('DOMContentLoaded', () => {
     event.preventDefault();
     const difficulty = document.querySelector('#difficulty').value;
     text = textArray[difficulty-1];
-    // Hämta text från databas med vald svårighetsgrad
-   // text = 'Lorem ipsum dolor sit amet consectetur adipisicing elit. Debitis rerum et optio nostrum maiores eligendi ipsum ducimus. Eaque, saepe officia?Lorem ipsum dolor sit amet consectetur adipisicing elit. Debitis rerum et optio nostrum maiores eligendi ipsum ducimus. Eaque, saepe officia?Lorem ipsum dolor sit amet consectetur adipisicing elit. Debitis rerum et optio nostrum maiores eligendi ipsum ducimus. Eaque, saepe officia?Lorem ipsum dolor sit amet consectetur adipisicing elit. Debitis rerum et optio nostrum maiores eligendi ipsum ducimus. Eaque, saepe officia?Lorem ipsum dolor sit amet consectetur adipisicing elit. Debitis rerum et optio nostrum maiores eligendi ipsum ducimus. Eaque, saepe officia?Lorem ipsum dolor sit amet consectetur adipisicing elit. Debitis rerum et optio nostrum maiores eligendi ipsum ducimus. Eaque, saepe officia?Lorem ipsum dolor sit amet consectetur adipisicing elit. Debitis rerum et optio nostrum maiores eligendi ipsum ducimus. Eaque, saepe officia?';
+ 
 
     testBox.innerHTML = text;
     stopButton.style.display = 'block';
