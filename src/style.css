@@ -161,33 +161,34 @@ footer {
   flex-direction: column;
   align-items: center;
   height: 10%;
+  min-height: 300px;
   width: 800px;
   border: 1px solid #333;
   border-radius: 15px;
 }
 
-#questionAlternatives{
+#questionAlternatives {
   display: flex;
 }
 
-#questionAlternatives label{
+#questionAlternatives label {
   display: flex;
   margin-right: 5%;
 }
 
-#questionAlternatives label input{
+#questionAlternatives label input {
   margin-right: 5%;
 }
-#questionAlternatives label span{
+#questionAlternatives label span {
   margin-right: 5%;
 }
 
-#test-form{
+#test-form {
   display: flex;
   flex-direction: column;
 }
 
-#answerQuestionsFormButton{
+#answerQuestionsFormButton {
   background-color: #333;
   color: white;
   border: none;
@@ -203,7 +204,3 @@ footer {
 .incorrect {
   background-color: red;
 }
-
-
-
-  
