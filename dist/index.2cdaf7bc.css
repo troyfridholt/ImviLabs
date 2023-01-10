@@ -117,4 +117,12 @@ footer {
   font-size: 14px;
 }
 
+.correct {
+  background-color: green;
+}
+
+.incorrect {
+  background-color: red;
+}
+
 /*# sourceMappingURL=index.2cdaf7bc.css.map */
