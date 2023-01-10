@@ -1,3 +1,6 @@
+
+
+
 document.addEventListener('DOMContentLoaded', () => {
   const form = document.querySelector('form');
   const testBox = document.querySelector('#test-box');
@@ -13,9 +16,8 @@ document.addEventListener('DOMContentLoaded', () => {
   form.addEventListener('submit', (event) => {
     event.preventDefault();
     const difficulty = document.querySelector('#difficulty').value;
-
-    // Hämta text från databas med vald svårighetsgrad
-    text = 'Lorem ipsum dolor sit amet consectetur adipisicing elit. Debitis rerum et optio nostrum maiores eligendi ipsum ducimus. Eaque, saepe officia?Lorem ipsum dolor sit amet consectetur adipisicing elit. Debitis rerum et optio nostrum maiores eligendi ipsum ducimus. Eaque, saepe officia?Lorem ipsum dolor sit amet consectetur adipisicing elit. Debitis rerum et optio nostrum maiores eligendi ipsum ducimus. Eaque, saepe officia?Lorem ipsum dolor sit amet consectetur adipisicing elit. Debitis rerum et optio nostrum maiores eligendi ipsum ducimus. Eaque, saepe officia?Lorem ipsum dolor sit amet consectetur adipisicing elit. Debitis rerum et optio nostrum maiores eligendi ipsum ducimus. Eaque, saepe officia?Lorem ipsum dolor sit amet consectetur adipisicing elit. Debitis rerum et optio nostrum maiores eligendi ipsum ducimus. Eaque, saepe officia?Lorem ipsum dolor sit amet consectetur adipisicing elit. Debitis rerum et optio nostrum maiores eligendi ipsum ducimus. Eaque, saepe officia?';
+    text = textArray[difficulty-1];
+ 
 
     testBox.innerHTML = text;
     stopButton.style.display = 'block';
@@ -125,3 +127,4 @@ questions.forEach((question, index) => {
 function updateTimer() {
   // Uppdatera tidtagare här
 }
+
