@@ -1,3 +1,24 @@
+// Import the functions you need from the SDKs you need
+import { initializeApp } from "firebase/app";
+import { getAnalytics } from "firebase/analytics";
+// TODO: Add SDKs for Firebase products that you want to use
+// https://firebase.google.com/docs/web/setup#available-libraries
+
+// Your web app's Firebase configuration
+// For Firebase JS SDK v7.20.0 and later, measurementId is optional
+const firebaseConfig = {
+  apiKey: "AIzaSyCZ_uNH6taoLA0YopDjRwz-0GUQXwfomoY",
+  authDomain: "imvilabs.firebaseapp.com",
+  projectId: "imvilabs",
+  storageBucket: "imvilabs.appspot.com",
+  messagingSenderId: "192287795210",
+  appId: "1:192287795210:web:2c29784bad8daf393c57f3",
+  measurementId: "G-G0ZLTEKRS1"
+};
+
+// Initialize Firebase
+const app = initializeApp(firebaseConfig);
+const analytics = getAnalytics(app);
 document.addEventListener('DOMContentLoaded', () => {
   const form = document.querySelector('form');
   const testBox = document.querySelector('#test-box');
