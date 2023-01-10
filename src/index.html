@@ -1,43 +1,39 @@
 <!DOCTYPE html>
 <html>
-<head>
-  <meta charset="utf-8">
-  <title>Läsningstest</title>
-  <link rel="stylesheet" href="style.css">
-</head>
-<body>
-  <header>
-    <h1>Lästest</h1>
-  </header>
-  <form>
-    <label for="difficulty">Välj svårighetsgrad:</label>
-    <select id="difficulty">
-      <option value="1">1</option>
-      <option value="2">2</option>
-      <option value="3">3</option>
-      <option value="4">4</option>
-      <option value="5">5</option>
-    </select>
-    <button type="submit">Starta test</button>
-  </form>
-  <div id="test-box">
-    <p id="textToRead"></p>
-    <div class="test-controls">
-      <button id="stop-button">Stopp</button>
-      
+  <head>
+    <meta charset="utf-8" />
+    <title>Läsningstest</title>
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <header>
+      <h1>Lästest</h1>
+    </header>
+    <form>
+      <label for="difficulty">Välj svårighetsgrad:</label>
+      <select id="difficulty">
+        <option value="1">1</option>
+        <option value="2">2</option>
+        <option value="3">3</option>
+        <option value="4">4</option>
+        <option value="5">5</option>
+      </select>
+      <button type="submit">Starta test</button>
+    </form>
+    <div id="test-box">
+      <p id="textToRead"></p>
+      <div class="test-controls">
+        <button id="stop-button">Stopp</button>
+      </div>
     </div>
-  </div>
 
+    <div id="test-results" style="display: block">
+      <p>Ord per minut: <span id="wpm">0</span></p>
+      <p>Noggrannhet på frågor: <span id="question-accuracy">0%</span></p>
+      <p>Total noggrannhet: <span id="total-accuracy">0%</span></p>
+    </div>
 
-  <div id="test-results" style="display:block">
-    <p>Ord per minut: <span id="wpm">0</span></p>
-    <p>Noggrannhet på frågor: <span id="question-accuracy">0%</span></p>
-    <p>Total noggrannhet: <span id="total-accuracy">0%</span></p>
-  </div>
-
-  <footer>
-    
-  </footer>
-  <script src="script.js"></script>
-</body>
+    <footer></footer>
+    <script src="script.js"></script>
+  </body>
 </html>
