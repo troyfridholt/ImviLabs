@@ -9,7 +9,7 @@
 
 const textArray= [
     {
-      level: 1,
+      Level: 1,
       texts: [
         {
           text: "What is the capital of Sweden?",
@@ -32,7 +32,7 @@ const textArray= [
       ]
     },
     {
-      level: 2,
+      Level: 2,
       texts: [
         {
           text: "Who painted the Mona Lisa?",
@@ -53,7 +53,6 @@ const textArray= [
           correctAnswer: "A"
         }
       ]
-    },
-    // fler nivåer och texter
+    }
   ];
   

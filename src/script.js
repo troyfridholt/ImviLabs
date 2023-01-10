@@ -15,8 +15,12 @@ document.addEventListener('DOMContentLoaded', () => {
 
   form.addEventListener('submit', (event) => {
     event.preventDefault();
-    const difficulty = document.querySelector('#difficulty').value;
-    text = textArray[difficulty-1];
+    let difficulty = document.querySelector('#difficulty').value;
+    
+    
+    
+    text = getTextsByLevel(1);
+    
  
 
     testBox.innerHTML = text;
@@ -69,7 +73,6 @@ document.addEventListener('DOMContentLoaded', () => {
           {value: 'three', letter: 'C', text: 'Wyoming'}
         ]
       }
-      //...
     ];
     
     const testBox = document.getElementById('test-box');
@@ -127,6 +130,15 @@ document.addEventListener('DOMContentLoaded', () => {
     const percentage = Math.round((correctCount / correctAnswers.length) * 100);
     console.log(percentage)
     accuracySpan.innerHTML = percentage + '%';
+  }
+
+  function getTextsByLevel(level) {
+    return textArray
+      .filter(levelData => levelData.Level === level)
+      //Här ska vi ha ett random nummer som genererar en text
+      .map(levelData => levelData.texts[0])
+      .flat()
+      .map(text => text.text);
   }
   
 
