@@ -1,16 +1,26 @@
+* {
+  margin: 0;
+  padding: 0;
+  font-family: Roboto, Poppins;
+}
+
 body {
   font-family: Arial, sans-serif;
-  background-color: #f1f1f1;
+  background-color: #fff;
   display: flex;
   flex-direction: column;
   align-items: center;
+  min-height: 130vh;
 }
 
 header {
-  background-color: #333;
-  color: white;
+  position: fixed;
+  width: 100%;
+  background-color: #fff;
+  color: black;
   padding: 20px;
   text-align: center;
+  box-shadow: 1px 2px 3px 0px rgba(0, 0, 0, 0.4);
 }
 
 h1 {
@@ -24,18 +34,18 @@ form {
   margin: 20px 0;
 }
 
-
 select {
   width: 150px;
   height: 40px;
-  border: 1px solid #333;
-  border-radius: 5px;
+  border: 1px solid #4379b8;
+  border-radius: 15px;
   padding: 0 10px;
   font-size: 14px;
 }
 
 button {
-  background-color: #333;
+  border-radius: 15px;
+  background-color: #4379b8;
   color: white;
   border: none;
   padding: 10px 20px;
@@ -52,8 +62,7 @@ button {
 
 #test-results p {
   margin: 0;
-  font-size: 14
-
+  font-size: 14;
 }
 
 #test-results span {
@@ -62,24 +71,86 @@ button {
 }
 
 footer {
-  background-color: #333;
-  color: white;
-  padding: 20px;
-  text-align: center;
+  height: 50px;
+  position: fixed;
+  width: 100%;
+  left: 0;
+  bottom: 0;
+  background-color: #ecf2f8;
+  color: black;
 }
 
+.footer_links {
+  margin-top: 15px;
+  display: flex;
+  align-items: center;
+  justify-content: space-evenly;
+}
 /* Add the following styles to the #middle div */
 #middle {
-  width: 1600px;
-  margin: 20px auto;
+  border-radius: 15px;
+  width: 100%;
+  margin-top: 100px;
+  margin-left: auto;
+  margin-right: auto;
+
   display: flex;
   flex-direction: column;
   align-items: center;
   background-color: white;
 }
 
-#stop-button{
+#difficulty {
+  border-radius: 15px;
+  margin-right: 10px;
+  margin-left: 10px;
+}
+
+#stop-button {
   display: none;
+}
+
+#test-box {
+  display: flex;
+  padding: 3rem;
+  flex-direction: column;
+  align-items: center;
+  height: 400px;
+  width: 800px;
+  border: 1px solid #333;
+  border-radius: 25px;
+  overflow: auto;
+}
+
+#questionAlternatives {
+  display: flex;
+}
+
+#questionAlternatives label {
+  display: flex;
+  margin-right: 5%;
+}
+
+#questionAlternatives label input {
+  margin-right: 5%;
+}
+#questionAlternatives label span {
+  margin-right: 5%;
+}
+
+#test-form {
+  display: flex;
+  flex-direction: column;
+}
+
+#answerQuestionsFormButton {
+  background-color: #4379b8;
+  border-radius: 15px;
+  color: white;
+  border: none;
+  padding: 10px 20px;
+  cursor: pointer;
+  font-size: 14px;
 }
 
 #test-box {
@@ -90,7 +161,7 @@ footer {
   width: 800px;
   border: 1px solid #333;
   border-radius: 5px;
-  overflow: auto;  
+  overflow: auto;
 }
 
 #questionAlternatives{
