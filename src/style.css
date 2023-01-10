@@ -139,5 +139,16 @@ body {
     align-self: center;
     display: none;
   }
+  
+  #test-box {
+    /* Add the following styles */
+    height: 400px;
+    overflow-y: scroll;
+  
+  }
+
+  #test-box p {
+    font-size: auto;
+  }
 
   
