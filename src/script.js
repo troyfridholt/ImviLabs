@@ -54,6 +54,7 @@ document.addEventListener('DOMContentLoaded', () => {
     testBox.innerHTML = '';
   
     // Iterate through the questions array and append each question to the "test-box" element
+    
     let html = '';
     questions.forEach((question) => {
       html += `<label for="${question.text}">${question.text}</label>
