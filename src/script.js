@@ -15,7 +15,7 @@ document.addEventListener('DOMContentLoaded', () => {
     const difficulty = document.querySelector('#difficulty').value;
 
     // Hämta text från databas med vald svårighetsgrad
-    text = 'Text hämtas från databas här';
+    text = 'Lorem ipsum dolor sit amet consectetur adipisicing elit. Debitis rerum et optio nostrum maiores eligendi ipsum ducimus. Eaque, saepe officia?Lorem ipsum dolor sit amet consectetur adipisicing elit. Debitis rerum et optio nostrum maiores eligendi ipsum ducimus. Eaque, saepe officia?Lorem ipsum dolor sit amet consectetur adipisicing elit. Debitis rerum et optio nostrum maiores eligendi ipsum ducimus. Eaque, saepe officia?Lorem ipsum dolor sit amet consectetur adipisicing elit. Debitis rerum et optio nostrum maiores eligendi ipsum ducimus. Eaque, saepe officia?Lorem ipsum dolor sit amet consectetur adipisicing elit. Debitis rerum et optio nostrum maiores eligendi ipsum ducimus. Eaque, saepe officia?Lorem ipsum dolor sit amet consectetur adipisicing elit. Debitis rerum et optio nostrum maiores eligendi ipsum ducimus. Eaque, saepe officia?Lorem ipsum dolor sit amet consectetur adipisicing elit. Debitis rerum et optio nostrum maiores eligendi ipsum ducimus. Eaque, saepe officia?';
 
     testBox.innerHTML = text;
     stopButton.style.display = 'block';
@@ -25,48 +25,70 @@ document.addEventListener('DOMContentLoaded', () => {
     interval = setInterval(updateTimer, 1000);
   });
 
+
   stopButton.addEventListener('click', () => {
     const questions = [
       {
-        text: 'Fråga 1:',
-        options: ['A', 'B', 'C']
+        text: 'Some Ute Indians lived in',
+        options: [
+          {value: 'one', letter: 'A', text: 'California'},
+          {value: 'two', letter: 'B', text: 'Colorado'},
+          {value: 'three', letter: 'C', text: 'Nevada'}
+        ]
       },
       {
-        text: 'Fråga 2:',
-        options: ['A', 'B', 'C']
+        text: 'Some Utes lived in',
+        options: [
+          {value: 'one', letter: 'A', text: 'Utah'},
+          {value: 'two', letter: 'B', text: 'Montana'},
+          {value: 'three', letter: 'C', text: 'Wyoming'}
+        ]
       },
       {
-        text: 'Fråga 3:',
-        options: ['A', 'B', 'C']
+        text: 'Some Utes lived in',
+        options: [
+          {value: 'one', letter: 'A', text: 'Utah'},
+          {value: 'two', letter: 'B', text: 'Montana'},
+          {value: 'three', letter: 'C', text: 'Wyoming'}
+        ]
       },
       {
-        text: 'Fråga 4:',
-        options: ['A', 'B', 'C']
-      },
-      {
-        text: 'Fråga 5:',
-        options: ['A', 'B', 'C']
+        text: 'Some Utes lived in',
+        options: [
+          {value: 'one', letter: 'A', text: 'Utah'},
+          {value: 'two', letter: 'B', text: 'Montana'},
+          {value: 'three', letter: 'C', text: 'Wyoming'}
+        ]
+      },      {
+        text: 'Some Utes lived in',
+        options: [
+          {value: 'one', letter: 'A', text: 'Utah'},
+          {value: 'two', letter: 'B', text: 'Montana'},
+          {value: 'three', letter: 'C', text: 'Wyoming'}
+        ]
       }
-      
+      //...
     ];
     
-    // Clear the "test-box" element
-    testBox.innerHTML = '';
-  
-    // Iterate through the questions array and append each question to the "test-box" element
+    const testBox = document.getElementById('test-box');
+    
     let html = '';
-    questions.forEach((question) => {
-      html += `<label for="${question.text}">${question.text}</label>
-               <br>`;
-  
-      question.options.forEach((option) => {
-        html += `<input type="radio" name="${question.text}-${option}" value="option1">
-                 <label for="${question.text}-${option}">${option}</label>
-                 <br>`;
-      });
-  
-      html += '<br>';
-    });
+let counter = 1;
+questions.forEach((question, index) => {
+  html += `<div id="question_${counter}">${counter}. ${question.text}</div><br>`;
+  html += '<div>'
+  question.options.forEach((option, optionIndex) => {
+    html += `<label>
+             <span id="choice_${counter}${option.letter}_letter">${option.letter}. </span>
+             <input type="radio" id="${counter}.${option.letter}" name="q${counter}" value="${option.value}">
+             <div id="choice_${counter}${option.letter}">${option.text}</div>
+             </label>`;
+  });
+  html += '</div>'
+  html += '<br>';
+  counter++;
+});
+
     testBox.innerHTML = html;
   
     endTime = Date.now();

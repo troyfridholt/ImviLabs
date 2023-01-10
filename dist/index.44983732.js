@@ -12,7 +12,7 @@ document.addEventListener("DOMContentLoaded", ()=>{
         event.preventDefault();
         const difficulty = document.querySelector("#difficulty").value;
         // Hämta text från databas med vald svårighetsgrad
-        text = "Text h\xe4mtas fr\xe5n databas h\xe4r";
+        text = "Lorem ipsum dolor sit amet consectetur adipisicing elit. Debitis rerum et optio nostrum maiores eligendi ipsum ducimus. Eaque, saepe officia?Lorem ipsum dolor sit amet consectetur adipisicing elit. Debitis rerum et optio nostrum maiores eligendi ipsum ducimus. Eaque, saepe officia?Lorem ipsum dolor sit amet consectetur adipisicing elit. Debitis rerum et optio nostrum maiores eligendi ipsum ducimus. Eaque, saepe officia?Lorem ipsum dolor sit amet consectetur adipisicing elit. Debitis rerum et optio nostrum maiores eligendi ipsum ducimus. Eaque, saepe officia?Lorem ipsum dolor sit amet consectetur adipisicing elit. Debitis rerum et optio nostrum maiores eligendi ipsum ducimus. Eaque, saepe officia?Lorem ipsum dolor sit amet consectetur adipisicing elit. Debitis rerum et optio nostrum maiores eligendi ipsum ducimus. Eaque, saepe officia?Lorem ipsum dolor sit amet consectetur adipisicing elit. Debitis rerum et optio nostrum maiores eligendi ipsum ducimus. Eaque, saepe officia?";
         testBox.innerHTML = text;
         stopButton.style.display = "block";
         testBox.appendChild(stopButton);
@@ -22,59 +22,122 @@ document.addEventListener("DOMContentLoaded", ()=>{
     stopButton.addEventListener("click", ()=>{
         const questions = [
             {
-                text: "Fr\xe5ga 1:",
+                text: "Some Ute Indians lived in",
                 options: [
-                    "A",
-                    "B",
-                    "C"
+                    {
+                        value: "one",
+                        letter: "A",
+                        text: "California"
+                    },
+                    {
+                        value: "two",
+                        letter: "B",
+                        text: "Colorado"
+                    },
+                    {
+                        value: "three",
+                        letter: "C",
+                        text: "Nevada"
+                    }
                 ]
             },
             {
-                text: "Fr\xe5ga 2:",
+                text: "Some Utes lived in",
                 options: [
-                    "A",
-                    "B",
-                    "C"
+                    {
+                        value: "one",
+                        letter: "A",
+                        text: "Utah"
+                    },
+                    {
+                        value: "two",
+                        letter: "B",
+                        text: "Montana"
+                    },
+                    {
+                        value: "three",
+                        letter: "C",
+                        text: "Wyoming"
+                    }
                 ]
             },
             {
-                text: "Fr\xe5ga 3:",
+                text: "Some Utes lived in",
                 options: [
-                    "A",
-                    "B",
-                    "C"
+                    {
+                        value: "one",
+                        letter: "A",
+                        text: "Utah"
+                    },
+                    {
+                        value: "two",
+                        letter: "B",
+                        text: "Montana"
+                    },
+                    {
+                        value: "three",
+                        letter: "C",
+                        text: "Wyoming"
+                    }
                 ]
             },
             {
-                text: "Fr\xe5ga 4:",
+                text: "Some Utes lived in",
                 options: [
-                    "A",
-                    "B",
-                    "C"
+                    {
+                        value: "one",
+                        letter: "A",
+                        text: "Utah"
+                    },
+                    {
+                        value: "two",
+                        letter: "B",
+                        text: "Montana"
+                    },
+                    {
+                        value: "three",
+                        letter: "C",
+                        text: "Wyoming"
+                    }
                 ]
             },
             {
-                text: "Fr\xe5ga 5:",
+                text: "Some Utes lived in",
                 options: [
-                    "A",
-                    "B",
-                    "C"
+                    {
+                        value: "one",
+                        letter: "A",
+                        text: "Utah"
+                    },
+                    {
+                        value: "two",
+                        letter: "B",
+                        text: "Montana"
+                    },
+                    {
+                        value: "three",
+                        letter: "C",
+                        text: "Wyoming"
+                    }
                 ]
             }
         ];
-        // Clear the "test-box" element
-        testBox.innerHTML = "";
-        // Iterate through the questions array and append each question to the "test-box" element
+        const testBox = document.getElementById("test-box");
         let html = "";
-        questions.forEach((question)=>{
-            html += `<label for="${question.text}">${question.text}</label>
-               <br>`;
-            question.options.forEach((option)=>{
-                html += `<input type="radio" name="${question.text}-${option}" value="option1">
-                 <label for="${question.text}-${option}">${option}</label>
-                 <br>`;
+        let counter = 1;
+        questions.forEach((question, index)=>{
+            html += `<div id="question_${counter}">${counter}. ${question.text}</div><br>`;
+            html += "<div>";
+            question.options.forEach((option, optionIndex)=>{
+                html += `<label>
+             <span id="choice_${counter}${option.letter}_letter">${option.letter}. </span>
+             <input type="radio" id="${counter}.${option.letter}" name="q${counter}" value="${option.value}">
+             <div id="choice_${counter}${option.letter}">${option.text}</div>
+             </label>`;
             });
+            html += "</div>";
             html += "<br>";
+            counter++;
         });
         testBox.innerHTML = html;
         endTime = Date.now();
