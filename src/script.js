@@ -3,7 +3,7 @@ document.addEventListener('DOMContentLoaded', () => {
   const testBox = document.querySelector('#test-box');
   const stopButton = document.querySelector('#stop-button');
   const wpmSpan = document.querySelector('#wpm');
-  const accuracySpan = document.querySelector('#accuracy');
+  
 
   let text = '';
   let startTime = null;
@@ -73,23 +73,23 @@ document.addEventListener('DOMContentLoaded', () => {
     const testBox = document.getElementById('test-box');
     
     let html = '';
-let counter = 1;
-html = '<form id="test-form" onsubmit="return validateForm()">'
-questions.forEach((question, index) => {
-    html += `<div id="question_${counter}">${counter}. ${question.text}</div><br>`;
-    html += '<div id=questionAlternatives>'
-    question.options.forEach((option, optionIndex) => {
-      html += `<label>
-              <input type="radio" id="${counter}.${option.letter}" name="q${counter}" value="${option.value}">
-              <span id="choice_${counter}${option.letter}_letter">${option.letter}. </span>
-              <div id="choice_${counter}${option.letter}">${option.text}</div>
-              </label>`;
-    });
-    html += '</div>'
-    html += '<br>';
-    counter++;
-  });
-      html += '<input type="submit" id="answerQuestionsFormButton" value="Skicka in svar"></form>'
+    let counter = 1;
+    html = ''
+    questions.forEach((question, index) => {
+        html += `<div id="question_${counter}">${counter}. ${question.text}</div><br>`;
+        html += '<div id="questionAlternatives">'
+        question.options.forEach((option, optionIndex) => {
+          html += `<label>
+                  <input type="radio" id="${counter}.${option.letter}" name="q${counter}" value="${option.value}">
+                  <span id="choice_${counter}${option.letter}_letter">${option.letter}. </span>
+                  <div id="choice_${counter}${option.letter}">${option.text}</div>
+                  </label>`;
+        });
+        html += '</div>'
+        html += '<br>';
+        counter++;
+      });
+      html += '<button type="button" id="answerQuestionsButton" onClick="submitAnswers()">Skicka in svar</button>'
 
       testBox.innerHTML = html;
   
@@ -99,27 +99,33 @@ questions.forEach((question, index) => {
     const elapsedTime = (endTime - startTime) / 1000;
     const words = text.split(' ');
     const wpm = Math.round((words.length / elapsedTime) * 60);
-
-    accuracySpan.textContent = accuracy;
+    wpmSpan.innerHTML = wpm
   });
   });
 
-  function validateForm(){
-    const questionAlternatives = document.querySelector('#questionAlternatives');
-
-    console.log(radioButtons.length)
-    for (let i = 0; i < radioButtons.length; i++) {
-      if (!radioButtons[i].checked) {
-        return false;
+  function submitAnswers() {
+    const accuracySpan = document.querySelector('#question-accuracy');
+    const correctAnswers = ["one", "one", "one", "one", "one"];
+    const selectedAnswers = [];
+    const radioButtons = document.querySelectorAll('input[type="radio"]:checked');
+    radioButtons.forEach(button => {
+      selectedAnswers.push(button.value);
+    });
+  
+    let correctCount = 0;
+    for (let i = 0; i < correctAnswers.length; i++) {
+      const radio = document.querySelector(`input[name="q${i + 1}"][value="${selectedAnswers[i]}"]`);
+      if (correctAnswers[i] === selectedAnswers[i]) {
+        correctCount++;
+        radio.parentElement.style.color = "green";
+      } else {
+        radio.parentElement.style.color = "red";
       }
     }
-    
-    return true;
+    const percentage = Math.round((correctCount / correctAnswers.length) * 100);
+    console.log(percentage)
+    accuracySpan.innerHTML = percentage + '%';
   }
-  
-  
-  
-  
   
 
 function updateTimer() {
